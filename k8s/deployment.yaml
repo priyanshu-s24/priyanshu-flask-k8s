@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: flask-container
-        image: priyanshu11/flask-cicd-app:latest
-        imagePullPolicy: Always
+        image: priyanshusingh9046/priyanshu-flask-k8s:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 5000
         resources:
