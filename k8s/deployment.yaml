@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: priyanshu-flask-deployment
+  labels:
+    app: priyanshu-flask
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: priyanshu-flask
+  template:
+    metadata:
+      labels:
+        app: priyanshu-flask
+    spec:
+      containers:
+      - name: flask-container
+        image: priyanshu11/flask-cicd-app:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+        resources:
+          limits:
+            cpu: "250m"
+            memory: "256Mi"
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+
